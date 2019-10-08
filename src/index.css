@@ -854,6 +854,10 @@
      margin-left: auto;
  }
  
+ .Main-header__Logo {
+     min-width: 118px;
+ }
+ 
  @media (max-width: 576px) {
      .Main-header-El_m_right {
          margin-right: 26px;

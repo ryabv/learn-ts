@@ -20,7 +20,7 @@
     },
     "scripts": {
         "start-server": "cd server && node app",
-        "start-client": "react-scripts start --path client",
+        "start-client": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom --verbose a",
         "eject": "react-scripts eject"

@@ -23,7 +23,7 @@ class File extends React.Component {
     render() {
         let nameOfFile;
         if (this.props.history) {
-            nameOfFile = this.props.history.location.pathname.match(/\w+\.\w+|\w+$/)[0];
+            nameOfFile = this.props.history.location.pathname.match(/[\w\.\-]+$/)[0];
         } else {
             nameOfFile = "unknown file";
         }

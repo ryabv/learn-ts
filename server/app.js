@@ -44,7 +44,15 @@ if (!reposDir) { // если изначально в строке не ввел�
 
 // Индексная страница
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+    res.sendFile(path.join(__dirname, '..build/index.html'));
+});
+
+app.get('/folderpage/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
+app.get('/filepage/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 

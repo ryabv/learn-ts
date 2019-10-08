@@ -1,11 +1,18 @@
 import React from 'react';
 
-export default function(props) {
-    function getClasses() {
-        return "Button " + props.classes.join(' ');
+export default class Button extends React.Component {
+    componentDidMount() {
+        return (<button onClick={this.props.click} className={this.getClasses()}><b>{this.props.title}</b> {this.props.text}</button>)
     }
 
-    return (
-        <button onClick={props.click} className={getClasses()}><b>{props.title}</b> {props.text}</button>
-    )
+    getClasses() {
+        return "Button " + this.props.classes.join(' ');
+    }
+
+    render() {
+        return (
+            <button onClick={this.props.click} className={this.getClasses()}><b>{this.props.title}</b> {this.props.text}</button>
+        )
+    }
+    
 }
