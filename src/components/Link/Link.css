@@ -1,0 +1,97 @@
+.Link {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-decoration: none;
+
+    color: var(--main-blue);
+}
+.Link_block {
+    box-sizing: border-box;
+    padding: 8px 12px;
+
+    color: #000;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+}
+.Link_mobile {
+    display: none;
+}
+.Link_color_black {
+    color: var(--main-black);
+}
+.Link_weight_bold {
+    font-weight: bold;
+}
+.Link_before_files::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    content: '\f0c9';
+}
+.Link_before_folder::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    content: '\f07b';
+}
+.Link_before_code::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 10px;
+
+    content: '\f1c9';
+}
+.Link_before_text::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 10px;
+
+    content: '\f15c';
+}
+.Link_before_branch::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    content: '\f126';
+}
+@media (max-width: 576px) {
+    .Link_mob_after-link::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        content: '';
+    }
+    .Link_mobile {
+        display: block;
+
+        color: var(--darker-grey);
+    }
+    .Link_before_back::before {
+        font-family: 'Font Awesome 5 Free';
+        font-size: 14px;
+        font-weight: bold;
+
+        margin-right: 6px;
+
+        content: '\f053';
+    }
+}

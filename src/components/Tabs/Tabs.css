@@ -1,0 +1,23 @@
+.Tabs {
+    display: flex;
+
+    border-bottom: 1px solid var(--main-grey);
+}
+.Tabs-Link {
+    font-weight: 500;
+
+    margin-right: 32px;
+    padding: 10px 0;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: var(--darker-grey);
+}
+.Tabs-Link:last-child {
+    margin-right: 0;
+}
+.Tabs-Link_active {
+    color: var(--main-black);
+    border-bottom: 3px solid var(--main-red);
+}

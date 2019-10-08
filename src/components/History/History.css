@@ -1,0 +1,107 @@
+.History {
+    font-family: 'Arial', sans-serif;
+}
+.History-Title {
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--darker-grey);
+}
+.History-List {
+    margin: 0;
+    padding: 0;
+}
+.History-Item {
+    position: relative;
+
+    display: grid;
+
+    margin: 0;
+    padding: 0;
+
+    grid-template-columns: 44px 600px auto auto;
+    column-gap: 10px;
+}
+.History-Item::after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 2px;
+    right: 0;
+
+    content: '\f121';
+
+    color: var(--darker-grey);
+}
+.History-Path {
+    position: relative;
+}
+.History-Path_round {
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: #ebf6fd;
+    background-image: url('./img/history.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.History-Path_line {
+    width: 2px;
+    height: calc(100% - 44px);
+    margin: 0 auto;
+
+    border-radius: 2px;
+    background-color: #b8bec3;
+}
+.History-Item:last-child .History__path_line {
+    display: none;
+}
+.History-Info {
+    font-size: 13px;
+
+    padding-bottom: 10px;
+}
+.History-Info-title {
+    font-size: 14px;
+    line-height: 18px;
+
+    margin: 2px 0;
+}
+.History-Info-message {
+    font-size: 13px;
+    line-height: 18px;
+
+    margin: 0;
+    margin-bottom: 4px;
+}
+.History-Сommit {
+    text-align: right;
+}
+.History-Сode {
+    text-align: right;
+}
+.History-Сommit-link {
+    font-size: 13px;
+}
+.History-Сommit-name {
+    font-size: 13px;
+}
+.History__commit-author {
+    margin-left: 8px;
+}
+@media(max-width: 576px) {
+    .History-Item {
+        grid-template-columns: 44px auto;
+    }
+    .History-Commit {
+        display: none;
+    }
+    .History-Info-title {
+        margin-right: 20px;
+    }
+}

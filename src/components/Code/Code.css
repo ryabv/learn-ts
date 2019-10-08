@@ -1,0 +1,85 @@
+.Code-Block {
+    font-family: 'PT Mono', monospace;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.Code-Block_color_blue {
+    color: #00234b;
+}
+
+.Code-Num {
+    width: 42px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    vertical-align: top;
+    color: #b8bec3;
+    user-select: none;
+}
+
+.Code-Num_color_darker {
+    color: #999;
+}
+
+.Code-Num_sec-col {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.Code-String {
+    padding-right: 16px;
+    padding-left: 28px;
+}
+
+.Code-String-pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.Code-Line {
+    width: 100%;
+}
+
+.Code-Line_added {
+    background-color: #e6ffed;
+}
+
+.Code-Line_deleted {
+    background-color: #ffeef0;
+}
+
+.Code_color_transp-blue {
+    color: #8694a2;
+}
+
+.Code_color_grey {
+    color: #999;
+}
+
+.Code_color_blue {
+    color: #0433ff;
+}
+
+.Code_color_cyan {
+    color: #005fba;
+}
+
+.Code_color_green {
+    color: #008f00;
+}
+
+.Code_color_red {
+    color: #b4261a;
+}
+
+.Code_weight_bold {
+    font-weight: bold;
+}
+
+@media (max-width: 576px) {
+    .Code_Num {
+        width: 28px;
+    }
+}

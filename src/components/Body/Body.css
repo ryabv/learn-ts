@@ -1,0 +1,24 @@
+.Body {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    --main-red: #ff4f49;
+    --main-black: #000;
+    --main-blue: #1774e9;
+    --main-violet: #9a77ff;
+    --lighter-grey: #f0f2f3;
+    --main-grey: #e5e5e5;
+    --darker-grey: #7f8285;
+}
+.Body-Main {
+    flex: 1 0 auto;
+}
+.Body-Footer {
+    flex: 0 0 auto;
+}

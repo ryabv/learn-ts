@@ -1,0 +1,38 @@
+.Main-footer {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+
+    display: flex;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+
+    color: var(--darker-grey);
+    border-top: 1px solid var(--lighter-grey);
+
+    justify-content: space-between;
+}
+.Main-footer_right {
+    text-align: right;
+}
+.Main-footer-Text {
+    display: inline-block;
+
+    margin: 0;
+}
+.Main-footer-Text_left {
+    margin-right: 32px;
+
+    text-align: left;
+}
+.Main-footer-Text_right {
+    margin-left: 32px;
+
+    text-align: right;
+}
+.Main-footer-Text_right:first-child,
+.Main-footer-Text_left:last-child {
+    margin: 0;
+}

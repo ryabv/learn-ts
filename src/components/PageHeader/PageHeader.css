@@ -1,0 +1,52 @@
+.Page-header {
+    font-family: 'Arial', sans-serif;
+
+    position: relative;
+}
+.Page-header-Title {
+    font-size: 24px;
+    line-height: 28px;
+
+    display: inline-block;
+
+    margin-top: 13px;
+    margin-bottom: 8px;
+}
+.Page-header-Title_mr {
+    margin-right: 200px;
+}
+.Page-header-Text {
+    font-size: 14px;
+
+    margin: 0;
+}
+.Page-header-Tabs {
+    margin-top: 10px;
+}
+.Page-header-Link-block {
+    position: absolute;
+    top: 8px;
+    right: 0;
+
+    display: flex;
+
+    width: 100%;
+
+    justify-content: flex-end;
+}
+@media (max-width: 576px) {
+    .Page-header-Title {
+        font-size: 20px;
+    }
+    .Page-header-Title_mr {
+        margin-right: 0;
+    }
+    .Page-header-Link-block {
+        position: static;
+
+        margin-top: 8px;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -1,0 +1,21 @@
+.Main-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--lighter-grey);
+}
+.Main-header-El {
+    position: relative;
+
+    padding: 16px 0;
+}
+.Main-header-El_m_right {
+    margin-right: 40px;
+}
+.Main-header-Search {
+    margin-left: auto;
+}
+@media (max-width: 576px) {
+    .Main-header-El_m_right {
+        margin-right: 26px;
+    }
+}

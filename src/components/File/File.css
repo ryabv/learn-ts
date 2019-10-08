@@ -1,0 +1,235 @@
+.File {
+    font-family: 'Arial', sans-serif;
+}
+.File-Header {
+    display: flex;
+
+    box-sizing: border-box;
+    min-height: 42px;
+    padding: 6px 16px;
+
+    border: 1px solid var(--main-grey);
+    border-radius: 4px 4px 0 0;
+    background-color: #f5f5f5;
+
+    justify-content: space-between;
+    align-items: center;
+}
+.File-Header_commit {
+    font-size: 14px;
+}
+.File-Title {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+
+    display: inline;
+
+    margin: 0;
+}
+.File-Title_before_text::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 10px;
+
+    content: '\f15c';
+}
+.File-Title_before_code::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 10px;
+
+    content: '\f1c9';
+}
+.File-Title_before_commit::before {
+    font: inherit;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 10px;
+
+    content: '\f1c9';
+
+    color: #b8bec3;
+}
+.File-M {
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-right: 12px;
+
+    color: #6b69c7;
+}
+.File-Name {
+    overflow: hidden;
+
+    max-width: 80%;
+
+    text-overflow: ellipsis;
+}
+.File-Meta {
+    display: flex;
+
+    min-width: 110px;
+}
+.File-Plus-code {
+    color: #19bc4d;
+}
+.File-Minus-code {
+    margin-left: 16px;
+
+    color: #ff3029;
+}
+.File-External-link {
+    margin-left: 24px;
+
+    color: var(--darker-grey);
+}
+.File-Size {
+    color: #999;
+}
+.File-Download {
+    padding: 3px 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.File-Download-icon {
+    font-size: 12px;
+
+    color: var(--main-black);
+}
+.File-Content {
+    border: 1px solid var(--main-grey);
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+}
+.File-Content_text {
+    padding: 24px 32px;
+
+    word-wrap: break-word;
+}
+.File-Content-pre {
+    margin: 0;
+    padding: 3px 0;
+    padding-right: 16px;
+    padding-left: 70px;
+
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.File-Content-info {
+    font-family: 'PT Mono', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+
+    position: relative;
+
+    padding: 4px 12px;
+
+    color: #b8bec3;
+    background-color: #f1f8ff;
+}
+.File-Content-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+.File-Content-nav-link {
+    text-decoration: none;
+
+    color: #b8bec3;
+}
+.File-Content-nav-link_available {
+    cursor: pointer;
+
+    color: var(--main-black);
+}
+.File-Content-nav-link_up {
+    margin-right: 32px;
+
+    cursor: default;
+}
+.File-Content-nav-link_up::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    content: '\f0d7';
+}
+.File-Content-nav-link_down::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    content: '\f0d8';
+}
+.File-Content-table {
+    font-family: 'PT Mono', monospace;
+    font-size: 12px;
+    line-height: 20px;
+
+    width: 100%;
+
+    border-collapse: collapse;
+}
+.File-H1 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+
+    margin: 0;
+    margin-bottom: 10px;
+}
+.File-P {
+    font-size: 14px;
+    line-height: 18px;
+
+    max-width: 1128px;
+    margin: 0;
+    margin-bottom: 24px;
+}
+.File-Last-el {
+    margin-bottom: 0;
+}
+@media (max-width: 576px) {
+    .File {
+        margin: 0 -16px;
+    }
+    .File-Header_commit {
+        flex-direction: column;
+
+        min-height: 75px;
+        padding: 12px 16px;
+
+        align-items: flex-start;
+    }
+    .File-Download {
+        display: none;
+    }
+    .File-Content_text {
+        padding: 16px 24px;
+    }
+    .File-Content-pre {
+        padding-left: 44px;
+    }
+    .File-Content-nav {
+        display: none;
+    }
+    .File-Name {
+        max-width: 100%;
+    }
+    .File-Meta {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+}

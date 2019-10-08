@@ -1,0 +1,31 @@
+.Main-content_flex {
+    display: flex;
+
+    flex-wrap: wrap;
+}
+.Main-content_jc_spb {
+    justify-content: space-between;
+}
+.Main-content_vertp_22 {
+    padding: 22px 0;
+}
+.Main-content_vertp_16 {
+    padding: 16px 0;
+}
+.Main-content_layout_folder-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, 181px);
+    grid-column-gap: 18px;
+    grid-row-gap: 18px;
+}
+.Main-content-File {
+    margin-top: 16px;
+}
+@media (max-width: 576px) {
+    .Main-content_layout_folder-grid {
+        grid-template-columns: repeat(auto-fit, 160px);
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+    }
+}

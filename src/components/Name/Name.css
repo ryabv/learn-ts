@@ -1,0 +1,12 @@
+.Name {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+
+    display: inline-block;
+
+    color: var(--main-black);
+}
+.Name::first-letter {
+    color: var(--main-red);
+}

@@ -1,0 +1,28 @@
+.Breadcrumbs {
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--main-grey);
+}
+.Breadcrumbs-Link {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-decoration: none;
+
+    color: var(--main-black);
+    color: var(--darker-grey);
+}
+.Breadcrumbs-Link::after {
+    margin: 0 16px;
+
+    content: '/';
+}
+.Breadcrumbs-Link:last-child::after {
+    display: none;
+}
+.Breadcrumbs-Link_active {
+    font-weight: bold;
+
+    color: var(--main-black);
+}

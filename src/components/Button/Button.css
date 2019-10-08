@@ -1,0 +1,62 @@
+.Button {
+    font-size: 14px;
+    line-height: 18px;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    border: 0;
+    background-color: transparent;
+}
+.Button_arrow {
+    position: relative;
+}
+.Button_arrow_down::after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: -20px;
+
+    content: '\f107';
+    transform: translateY(-50%);
+}
+.Button_arrow_up::after {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    right: -20px;
+
+    content: '\f106';
+    transform: translateY(-50%);
+}
+.Button-Arrow {
+    font-size: 14px;
+    font-weight: normal;
+
+    position: absolute;
+    top: 50%;
+    right: -20px;
+
+    transform: translateY(-50%);
+}
+.Button_bb {
+    margin-bottom: -1px;
+
+    border-bottom: 3px solid var(--main-red);
+}
+.Button_color_grey {
+    color: var(--darker-grey);
+}
+.Button_font_inherit {
+    font: inherit;
+}
+.Button_weight_normal {
+    font-weight: normal;
+}
