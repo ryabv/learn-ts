@@ -9,14 +9,4 @@ class PageHeaderContainer extends React.Component {
     }
 }
 
-const putStateToProps = (state) => {
-    return {
-        
-    }
-}
-
-const putDispatchToProps = {
-
-};
-
-export default connect(putStateToProps, putDispatchToProps)(PageHeaderContainer);
+export default PageHeaderContainer;

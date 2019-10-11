@@ -12,16 +12,10 @@ export default function() {
                 <DropdownContainer
                     type="minimal"
                     btnTitle="Repository"
-                    btnText="test-repository"
                     btnClasses={[
                         'Button_arrow',
                         'Button_arrow_down',
                         'Button_bb Main-header-El',
-                    ]}
-                    links={[
-                        {text: 'test-repository', href: '/'},
-                        {text: 'My repository', href: '/'},
-                        {text: 'Devtools-repository', href: '/'},
                     ]}
                 />
 			</div>

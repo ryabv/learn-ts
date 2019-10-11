@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./server/build",
+    "noImplicitAny": false
+  },
+  "include": [
+    "server/utils/*",
+    "server/app.ts"
+  ]
+}

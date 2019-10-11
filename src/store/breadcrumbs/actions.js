@@ -1,27 +1,29 @@
-export const GET_BREADCRUMBS = 'GET_BREADCRUMBS';
-
-export function breadcrumbsFetchDataSuccess(breadcrumbs) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GET_BREADCRUMBS = 'GET_BREADCRUMBS';
+function breadcrumbsFetchDataSuccess(breadcrumbs) {
     console.log(breadcrumbs);
     return {
-        type: GET_BREADCRUMBS,
+        type: exports.GET_BREADCRUMBS,
         payload: breadcrumbs
-    }
+    };
 }
-
-export function breadcrumbsFetchData(url) {
-    return (dispatch) => {
+exports.breadcrumbsFetchDataSuccess = breadcrumbsFetchDataSuccess;
+function breadcrumbsFetchData(url) {
+    return function (dispatch) {
         fetch(url)
-            .then(response => {
-                return response;
-            })
-            .then(response => {
-                return response.json();
-            })
-            .then(breadcrumbs => {
-                dispatch(breadcrumbsFetchDataSuccess(breadcrumbs))
-            })
-            .catch(err => {
-                console.log(err.message);
-            });
-    }
+            .then(function (response) {
+            return response;
+        })
+            .then(function (response) {
+            return response.json();
+        })
+            .then(function (breadcrumbs) {
+            dispatch(breadcrumbsFetchDataSuccess(breadcrumbs));
+        })
+            .catch(function (err) {
+            console.log(err.message);
+        });
+    };
 }
+exports.breadcrumbsFetchData = breadcrumbsFetchData;

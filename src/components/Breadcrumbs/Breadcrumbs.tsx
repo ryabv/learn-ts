@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default class Breadcrumbs extends React.Component {
+
+interface BreadcrumbsProps {
+    data: [{link: string, name: string}]
+}
+
+export default class Breadcrumbs extends React.Component<BreadcrumbsProps> {
 
     getLinks() {
         if (!this.props.data) {

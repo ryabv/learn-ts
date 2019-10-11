@@ -13,22 +13,24 @@ class BreadcrumbsContainer extends React.Component {
     render() {
         return (
             <Breadcrumbs 
-                history={this.props.history}
-                getBreadcrumbs={this.props.getBreadcrumbs}
+                data = {[{link: 'test', name: 'test'}]}
+                // history={this.props.history}
+                // getBreadcrumbs={this.props.getBreadcrumbs}
             />
         );
     }
 }
 
-const putStateToProps = (state) => {
+const putStateToProps = (state: {breadcrumbs: {breadcrumbs: {}}}) => {
     return {
         breadcrumbs: state.breadcrumbs.breadcrumbs,
     }
 }
 
-const putDispatchToProps = (dispatch) => {
+let putDispatchToProps: (dispatch: (cb: {}) => void ) => {};
+putDispatchToProps = (dispatch) => {
     return {
-        getBreadcrumbs: url => {dispatch(breadcrumbsFetchData(url))}
+        getBreadcrumbs: (url: string) => {dispatch(breadcrumbsFetchData(url))}
     }
 };
 

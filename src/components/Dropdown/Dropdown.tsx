@@ -1,15 +1,29 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
 
+export interface DropdownProps {
+    btnClasses?: string[],
+    type?: string,
+    history?: {},
+    repositoriesList?: string[],
+    setActiveRepository?: (active: string) => void,
+    btnTitle?: string,
+    activeLink?: string
+}
 
-class Dropdown extends React.Component {
-    constructor(props) {
+interface DropdownState {
+    listClasses: string[],
+    buttonClasses: string[],
+    isShowed: boolean,
+}
+
+class Dropdown extends React.Component<DropdownProps, DropdownState> {
+    constructor(props: DropdownProps) {
         super(props);
         this.state = {
             listClasses: ['Dropdown-List'],
-            buttonClasses: props.btnClasses,
-            isShowed: false,
-            links: props.links
+            buttonClasses: props.btnClasses || [],
+            isShowed: false
         }
         this.handleClick = this.handleClick.bind(this);
         this.makeActive = this.makeActive.bind(this);    
@@ -17,7 +31,7 @@ class Dropdown extends React.Component {
 
     
 
-    getListClasses(additions) {
+    getListClasses(additions?: string): string[] {
         let classes = ['Dropdown-List'];
 
         if (this.props.type === 'standard') {
@@ -26,8 +40,10 @@ class Dropdown extends React.Component {
             classes.push('Dropdown-List_minimal');
         }
 
-        classes.push(additions);
-
+        if (additions) {
+            classes.push(additions);
+        }
+        
         return classes;
     }
 
@@ -51,9 +67,9 @@ class Dropdown extends React.Component {
         this.checkListClass();
     }
 
-    makeActive(e) {
+    makeActive(e: React.MouseEvent<HTMLAnchorElement>) {
         e.preventDefault();
-        let active = e.target.innerText;
+        let active = e.currentTarget.innerText;
         // this.props.setActiveRepository(active);
         // this.props.history.push(`?repo=${active}`);
     }
@@ -83,7 +99,7 @@ class Dropdown extends React.Component {
     render() {
         return (
             <div className="Dropdown">
-                <Button click={this.handleClick} classes={this.state.buttonClasses} title={this.props.btnTitle} text={this.props.activeLink}/>
+                <Button click={this.handleClick} classes={this.state.buttonClasses} title={this.props.btnTitle || ''} text={this.props.activeLink || ''}/>
                 <div className="Dropdown-Content">
                     <div className={this.state.listClasses.join(' ')}>
                         {this.renderLinks()}

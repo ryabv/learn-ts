@@ -4,7 +4,14 @@ const defaultState = {
     names: ['test-repository', 'Arc', 'My repository', 'Devtools-repository']
 };
 
-export const repositoriesListReducer = (state = defaultState, action) => {
+export type Action = {
+    type: string,
+    payload: {
+        names: string[]
+    }
+}
+
+export const repositoriesListReducer = (state = defaultState, action: Action) => {
     switch (action.type) {
         case GET_REPOSITORIES:
             return {...state, names: action.payload.names }

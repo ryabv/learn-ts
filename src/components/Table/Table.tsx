@@ -1,20 +1,36 @@
 import React from 'react';
 
-export default class Table extends React.Component {
-    constructor(props) {
+export interface TableProps {
+    pathToFile: string,
+    history: {location: {pathname: string}, push: (path: string) => void},
+    fetchFolderContent: (url: string) => void,
+    fetchFileContent: (url: string) => void,
+    commitHash: string,
+    files: [{
+        type: string,
+        commitMessage: string,
+        committer: string,
+        updated: string,
+        name: string
+    }],
+}
+
+export default class Table extends React.Component<TableProps> {
+    constructor(props: TableProps) {
         super(props);
         this.getMore = this.getMore.bind(this);
     }
 
-    getMore(e) {
+    getMore(e: React.MouseEvent<HTMLAnchorElement>) {
         e.preventDefault();
 
-        const isFolder = ~Array.prototype.indexOf.call(e.target.classList, 'Link_before_folder');
+        const isFolder = ~Array.prototype.indexOf.call(e.currentTarget.classList, 'Link_before_folder');
         let fetchString = '';
         let localPath = this.props.pathToFile ? `/${this.props.pathToFile}` : '';
-        let typeOfQuery = e.target.pathname.match(/filepage|folderpage/g) || ['']; // определяем, file или folder стоит в начале пути
+        let typeOfQuery: string | string[] = e.currentTarget.pathname.match(/filepage|folderpage/g) || ['']; // определяем, file или folder стоит в начале пути
         typeOfQuery = typeOfQuery[typeOfQuery.length - 1];
-        let nameOfSubject = e.target.pathname.match(/[\w\-\.]+$/)[0]; // определяем название файла из конца пути
+        let parsedPath = e.currentTarget.pathname.match(/[\w\-\.]+$/) || []; // определяем название файла из конца пути
+        let nameOfSubject = parsedPath[0];
         this.props.history.location.pathname = '/';
         this.props.history.push(typeOfQuery + localPath + '/' + nameOfSubject);
 

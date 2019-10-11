@@ -1,6 +1,11 @@
 import React from 'react';
 
-class File extends React.Component {
+export interface FileProps {
+    fileContent: [],
+    history: {location: {pathname: string}}
+}
+
+class File extends React.Component<FileProps> {
     setFileContent() {
         if (!this.props.fileContent) {
             // console.log('no data');
@@ -23,7 +28,8 @@ class File extends React.Component {
     render() {
         let nameOfFile;
         if (this.props.history) {
-            nameOfFile = this.props.history.location.pathname.match(/[\w\.\-]+$/)[0];
+            let matchedPath = this.props.history.location.pathname.match(/[\w\.\-]+$/) || '';
+            nameOfFile = matchedPath[0];
         } else {
             nameOfFile = "unknown file";
         }

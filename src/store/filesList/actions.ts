@@ -1,22 +1,22 @@
 export const GET_FILES_DATA_FROM_SERVER_SUCCESS = 'GET_FILES_DATA_FROM_SERVER_SUCCESS';
 export const GET_FILES_CONTENT_DATA_FROM_SERVER_SUCCESS = 'GET_FILES_CONTENT_DATA_FROM_SERVER_SUCCESS';
 
-export function filesFetchDataSuccess(files) {
+export function filesFetchDataSuccess(files: {}) {
     return {
         type: GET_FILES_DATA_FROM_SERVER_SUCCESS,
         payload: files
     }
 }
 
-export function filesContentFetchDataSuccess(content) {
+export function filesContentFetchDataSuccess(content: {}) {
     return {
         type: GET_FILES_CONTENT_DATA_FROM_SERVER_SUCCESS,
         payload: content
     }
 }
 
-export function filesFetchFolderContent(url) {
-    return (dispatch) => {
+export function filesFetchFolderContent(url: string) {
+    return (dispatch: (cb: {}) => void) => {
         fetch(url)
             .then(response => {
                 return response;
@@ -33,8 +33,8 @@ export function filesFetchFolderContent(url) {
     }
 }
 
-export function filesFetchFileContent(url) {
-    return (dispatch) => {
+export function filesFetchFileContent(url: string) {
+    return (dispatch: (cb: {}) => void) => {
         fetch(url)
             .then(response => {
                 return response;

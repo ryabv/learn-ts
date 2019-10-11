@@ -1,11 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { filesFetchFolderContent, filesFetchFileContent } from '../../store/filesList/actions';
-import Table from './Table';
+import Table, { TableProps } from './Table';
 import { withRouter } from "react-router-dom";
 
+interface TableContainerProps extends TableProps {
+    files: [{
+        type: string,
+        commitMessage: string,
+        committer: string,
+        updated: string,
+        name: string
+    }]
+}
 
-class TableContainer extends React.Component {
+class TableContainer extends React.Component<TableContainerProps> {
     componentDidMount() {
         window.addEventListener('popstate', () => {
             const localClearPath = this.props.history.location.pathname.replace(/folderpage|filepage/, '');
@@ -22,25 +31,38 @@ class TableContainer extends React.Component {
             history={this.props.history}
             fetchFolderContent={this.props.fetchFolderContent} 
             fetchFileContent={this.props.fetchFileContent} 
-            files={this.props.filesList} 
+            files={this.props.files} 
             commitHash={this.props.commitHash}
         />;
     }
 }
 
-const putStateToProps = (state) => {
+type State = {
+    filesList: {
+        filesList: [{
+            type: string,
+            commitMessage: string,
+            committer: string,
+            updated: string,
+            name: string
+        }],
+        commitHash: string,
+        pathToFile: string
+    }
+}
+
+const putStateToProps = (state: State) => {
     return {
-        filesList: state.filesList.filesList,
+        files: state.filesList.filesList,
         commitHash: state.filesList.commitHash,
-        pathToFile: state.filesList.pathToFile,
-        currRepo: 'state.repositoriesList.activeLink'
+        pathToFile: state.filesList.pathToFile
     }
 };
 
-const putDispatchToProps = (dispatch) => {
+const putDispatchToProps = (dispatch: any) => {
     return {
-        fetchFolderContent: url => {dispatch(filesFetchFolderContent(url))},
-        fetchFileContent: url => {dispatch(filesFetchFileContent(url))}
+        fetchFolderContent: (url: string) => {dispatch(filesFetchFolderContent(url))},
+        fetchFileContent: (url: string) => {dispatch(filesFetchFileContent(url))}
     }
 };
 

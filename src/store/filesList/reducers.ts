@@ -24,7 +24,12 @@ const defaultState = [{
     }
 ];
 
-export const filesListReducer = (state = defaultState, action) => {
+type Action = {
+    type: string,
+    payload: {}
+}
+
+export const filesListReducer = (state = defaultState, action: Action) => {
     switch (action.type) {
         case GET_FILES_DATA_FROM_SERVER_SUCCESS:
             return action.payload

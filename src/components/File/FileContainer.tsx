@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { filesFetchFileContent } from '../../store/fileContent/actions';
-import File from './File';
+import File, { FileProps } from './File';
 import { withRouter } from "react-router-dom";
 
 
-class FileContainer extends React.Component {
+interface FileContainerProps extends FileProps {
+    getFileContent: (url: string) => void
+}
+
+class FileContainer extends React.Component<FileContainerProps> {
     componentDidMount() {
         window.addEventListener('popstate', () => {
             const localClearPath = this.props.history.location.pathname.replace(/folderpage|filepage/, '');
@@ -19,21 +23,20 @@ class FileContainer extends React.Component {
     render() {
         return <File 
             history={this.props.history}
-            getFileContent={this.props.getFileContent} 
             fileContent={this.props.fileContent} 
         />;
     }
 }
 
-const putStateToProps = (state) => {
+const putStateToProps = (state: {fileContent: {fileData: []}}) => {
     return {
         fileContent: state.fileContent.fileData
     }
 };
 
-const putDispatchToProps = (dispatch) => {
+const putDispatchToProps = function(dispatch: any) {
     return {
-        getFileContent: url => {dispatch(filesFetchFileContent(url))}
+        getFileContent: (url: string) => {dispatch(filesFetchFileContent(url))}
     }
 };
 
